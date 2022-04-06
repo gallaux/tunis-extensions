@@ -17,7 +17,7 @@ export function isLeapYear(year: number): boolean {
 }
 
 /**
-* Checks if the given month, day, and year are a valid combination.
+* Checks if the given year, month, and day are a valid combination.
 * @param {number} year
 * @param {number} month
 * @param {number} day

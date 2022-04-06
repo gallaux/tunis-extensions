@@ -1,6 +1,6 @@
 {
     "name": "tunis-extensions",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "license": "MIT",
     "private": false,
     "main": "dist/src/index.js",
@@ -8,7 +8,7 @@
     "files": [
         "dist/src"
     ],
-    "description": "A set of generic functions that extend the global built-in types in TypeScript, as well as helper functions",
+    "description": "A set of generic functions that extend the global built-in types in TypeScript, as well as global helper functions",
     "scripts": {
         "build": "del-cli --force ./dist && tsc",
         "delete-build": "del-cli --force ./dist",
