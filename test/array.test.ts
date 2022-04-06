@@ -1,3 +1,5 @@
+import "../src/index"
+
 describe("isEqualArray", () => {
     const arr1: string[] = ["strA", "strB", "strC"];
     const arr2: string[] = ["strB", "strC", "strA"];

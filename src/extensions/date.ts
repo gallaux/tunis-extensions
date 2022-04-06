@@ -1,4 +1,10 @@
-import { isLeapYear } from "./shared";
+import { isLeapYear } from "../helpers/date";
+
+declare global {
+    interface Date {
+        isLeapYear(this: Date): boolean;
+    }
+}
 
 /**
  * Determines if a date object is a leap year or not.

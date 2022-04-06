@@ -1,3 +1,5 @@
+import "../src/index"
+
 describe("emptyPlaceholder", () => {
     it("Returns the string if it's truthy, otherwise the placeholder", () => {
         expect("test".emptyPlaceholder()).toEqual("test");

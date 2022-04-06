@@ -1,10 +1,21 @@
+import { emptyPlaceholder, isInteger, toCamelCase, toCapitalizedWord } from "../helpers/string";
+
+declare global {
+    interface String {
+        emptyPlaceholder(this: string, placeholder?: string): string;
+        isInteger(this: string, ignoreWhitespaces?: boolean): boolean;
+        toCamelCase(this: string): string;
+        toCapitalizedWord(this: string): string;
+    }
+}
+
 /**
  * Returns the string if it's truthy, otherwise the placeholder.
  * @param {string} placeholder "The placeholder to be returned if the string is falsy"
  * @returns {string}
  */
 String.prototype.emptyPlaceholder = function (placeholder: string = "-"): string {
-    return Boolean(this) ? this : placeholder;
+    return emptyPlaceholder(this, placeholder);
 }
 
 /**
@@ -13,8 +24,7 @@ String.prototype.emptyPlaceholder = function (placeholder: string = "-"): string
  * @returns {boolean}
  */
 String.prototype.isInteger = function (ignoreWhitespaces: boolean = false): boolean {
-    let regex = ignoreWhitespaces ? /^\s*\-?\d+\s*$/ : /^\-?\d+$/;
-    return new RegExp(regex).test(this);
+    return isInteger(this, ignoreWhitespaces);
 }
 
 /**
@@ -22,12 +32,7 @@ String.prototype.isInteger = function (ignoreWhitespaces: boolean = false): bool
  * @returns {string}
  */
 String.prototype.toCamelCase = function (): string {
-    if (this) {
-        let strArray = this.split(" ");
-        strArray = strArray.map(str => this.toCapitalizedWord());
-        return strArray.join("");
-    }
-    return this;
+    return toCamelCase(this);
 }
 
 /**
@@ -35,8 +40,5 @@ String.prototype.toCamelCase = function (): string {
  * @returns {string}
  */
 String.prototype.toCapitalizedWord = function (): string {
-    if (this) {
-        return this[0].toUpperCase() + this.toLowerCase().slice(1, this.length);
-    }
-    return this;
+    return toCapitalizedWord(this);
 }

@@ -1,19 +1,15 @@
-export { }
+/* Extensions */
+import "./extensions/array"
+import "./extensions/date"
+import "./extensions/number"
+import "./extensions/string"
 
-declare global {
-    interface Array<T> {
-        isEqualArray(this: T[], compareArray: T[], strictOrder?: boolean): boolean;
-    }
-    interface Date {
-        isLeapYear(this: Date): boolean;
-    }
-    interface Number {
-        isLeapYear(this: number): boolean;
-    }
-    interface String {
-        emptyPlaceholder(this: string, placeholder?: string): string;
-        isInteger(this: string, ignoreWhitespaces?: boolean): boolean;
-        toCamelCase(this: string): string;
-        toCapitalizedWord(this: string): string;
-    }
-}
+/* Helpers */
+import { isEqualArrays } from "./helpers/array"
+export { isEqualArrays }
+
+import { isLeapYear, isValidDate } from "./helpers/date"
+export { isLeapYear, isValidDate }
+
+import { emptyPlaceholder, isInteger, toCamelCase, toCapitalizedWord } from "./helpers/string"
+export { emptyPlaceholder, isInteger, toCamelCase, toCapitalizedWord }
