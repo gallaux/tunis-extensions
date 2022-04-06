@@ -1,5 +1,5 @@
 # Tunis extensions
-A set of generic functions that extend the global built-in types in TypeScript, as well as helper functions
+A set of generic functions that extend the global built-in types in TypeScript, as well as global helper functions
 
 ## Npm package
 https://www.npmjs.com/package/tunis-extensions
