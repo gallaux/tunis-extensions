@@ -9,14 +9,38 @@ export function emptyPlaceholder(string: string, placeholder: string = "-"): str
 }
 
 /**
+ * Checks if a string ends with the specified string.
+ * @param {string} string "The string being tested"
+ * @param {string} suffix "The suffix to look for"
+ * @param {boolean} isCaseSensitive "If the replacement should respect the case"
+ * @returns {boolean}
+ */
+export function isEndingWith(string: string, suffix: string, isCaseSensitive: boolean = true): boolean {
+    let strSuffix = string.substr(string.length - suffix.length, suffix.length);
+    return isCaseSensitive ? strSuffix === suffix : strSuffix.toLowerCase() === suffix.toLowerCase();;
+}
+
+/**
  * Checks if the string is an integer.
  * @param {string} string "The string being tested"
  * @param {boolean} ignoreWhitespaces "If leading and trailing whitespace should be ignored"
  * @returns {boolean}
  */
 export function isInteger(string: string, ignoreWhitespaces: boolean = false): boolean {
-    let regex = ignoreWhitespaces ? /^\s*\-?\d+\s*$/ : /^\-?\d+$/;
+    let regex: RegExp = ignoreWhitespaces ? /^\s*\-?\d+\s*$/ : /^\-?\d+$/;
     return new RegExp(regex).test(string);
+}
+
+/**
+ * Check if a string starts with the specified string.
+ * @param {string} string "The string being tested"
+ * @param {string} prefix "The prefix to look for"
+ * @param {boolean} isCaseSensitive "If the replacement should respect the case"
+ * @returns {boolean}
+ */
+export function isStartingWith(string: string, prefix: string, isCaseSensitive: boolean = true): boolean {
+    let strPrefix = string.substr(0, prefix.length);
+    return isCaseSensitive ? strPrefix === prefix : strPrefix.toLowerCase() === prefix.toLowerCase();
 }
 
 /**
@@ -26,8 +50,7 @@ export function isInteger(string: string, ignoreWhitespaces: boolean = false): b
  */
 export function toCamelCase(string: string): string {
     if (string) {
-        let strArray = string.split(" ");
-        strArray = strArray.map(str => toCapitalizedWord(str));
+        let strArray: string[] = string.split(" ").map(str => toCapitalizedWord(str));
         return strArray.join("");
     }
     return string;
@@ -43,4 +66,14 @@ export function toCapitalizedWord(string: string): string {
         return string[0].toUpperCase() + string.toLowerCase().slice(1, string.length);
     }
     return string;
+}
+
+/**
+ * Trims leading zeroes.
+ * @param {string} string "The string being trimmed"
+ * @returns {string} 
+ */
+export function trimLeadingZeroes(string: string): string {
+    let regex: RegExp = /^(0+)/g;
+    return string.replace(regex, "");
 }

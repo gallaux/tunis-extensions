@@ -12,3 +12,13 @@ describe("isEqualArray", () => {
         expect(arr1.isEqualArray(arr3)).toEqual(false);
     });
 });
+
+describe("removeElement", () => {
+    const arr: number[] = [0, 1, 2, 3];
+
+    it("Removes an element from the array", () => {
+        expect(arr.removeElement(1)).toEqual([0, 2, 3]);
+        expect(arr.removeElement(3)).toEqual([0, 1, 2]);
+        expect(arr.removeElement(8)).toEqual([0, 1, 2, 3]);
+    });
+});

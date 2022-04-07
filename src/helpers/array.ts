@@ -13,3 +13,13 @@ export function isEqualArrays<T>(array1: T[], array2: T[], strictOrder: boolean 
         return JSON.stringify([...array1].sort()) === JSON.stringify([...array2].sort());
     }
 }
+
+/**
+ * Removes an element from the array.
+ * @param {T[]} array "The input array"
+ * @param {T} element "The element to remove from the array"
+ * @returns {T[]}
+ */
+export function removeElement<T>(array: T[], element: T): T[] {
+    return array.filter(el => el !== element);
+}

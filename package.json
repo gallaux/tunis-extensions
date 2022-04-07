@@ -1,6 +1,6 @@
 {
     "name": "tunis-extensions",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "license": "MIT",
     "private": false,
     "main": "dist/src/index.js",
@@ -22,11 +22,15 @@
         "prototype",
         "utility"
     ],
+    "author": "Guillaume Allaux",
     "repository": {
         "type": "git",
         "url": "https://github.com/gallaux/tunis-extensions"
     },
-    "author": "Guillaume Allaux",
+    "jest": {
+        "verbose": true,
+        "testMatch": [ "**/test/**/*.test.ts" ]
+    },
     "devDependencies": {
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-typescript": "^7.16.7",

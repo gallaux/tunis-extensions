@@ -23,7 +23,7 @@ export function isLeapYear(year: number): boolean {
 * @param {number} day
 */
 export function isValidDate(year: number, month: number, day: number): boolean {
-    let daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    let daysInMonth: number[] = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     if (month < 1 || month > 12) {
         return false;
     }
