@@ -8,8 +8,8 @@ export function logEx(message?: any, title?: string, logDate: boolean = false): 
     let nowStr: string = "";
     if (logDate) {
         let nowDate: Date = new Date();
-        nowStr = ` ${nowDate.getFullYear()}-${nowDate.getMonth()}-${nowDate.getDay()} @${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getSeconds()}.${nowDate.getMilliseconds()} `;
+        nowStr = ` (${nowDate.getFullYear()}-${nowDate.getMonth()}-${nowDate.getDay()} @${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getSeconds()}.${nowDate.getMilliseconds()})`;
     }
-    console.log(`/**********${title ? ` ${title} ` : ""}**********${nowStr}/`);
+    console.log(`/**********${title ? ` ${title} ` : ""}**********/${nowStr}`);
     console.log(message);
 }
