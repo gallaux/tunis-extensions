@@ -24,10 +24,20 @@ export function isEndingWith(string: string, suffix: string, isCaseSensitive: bo
  * Checks if the string is an integer.
  * @param {string} string "The string being tested"
  * @param {boolean} ignoreWhitespaces "If leading and trailing whitespace should be ignored"
+ * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-export function isInteger(string: string, ignoreWhitespaces: boolean = false): boolean {
-    let regex: RegExp = ignoreWhitespaces ? /^\s*\-?\d+\s*$/ : /^\-?\d+$/;
+export function isInteger(string: string, ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
+    let regex: RegExp;
+    if (ignoreWhitespaces && isPositiveOnly) {
+        regex = /^\s*\d+\s*$/;
+    } else if (ignoreWhitespaces) {
+        regex = /^\s*\-?\d+\s*$/;
+    } else if (isPositiveOnly) {
+        regex = /^\d+$/;
+    } else {
+        regex = /^\-?\d+$/;
+    }
     return new RegExp(regex).test(string);
 }
 

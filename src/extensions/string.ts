@@ -4,7 +4,7 @@ declare global {
     interface String {
         emptyPlaceholder(this: string, placeholder?: string): string;
         isEndingWith(this: string, suffix: string, isCaseSensitive?: boolean): boolean;
-        isInteger(this: string, ignoreWhitespaces?: boolean): boolean;
+        isInteger(this: string, ignoreWhitespaces?: boolean, isPositiveOnly?: boolean): boolean;
         isStartingWith(this: string, prefix: string, isCaseSensitive?: boolean): boolean;
         toCamelCase(this: string): string;
         toCapitalizedWord(this: string): string;
@@ -34,10 +34,11 @@ String.prototype.isEndingWith = function (suffix: string, isCaseSensitive: boole
 /**
  * Check if the string is an integer.
  * @param {boolean} ignoreWhitespaces "If leading and trailing whitespace should be ignored"
+ * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-String.prototype.isInteger = function (ignoreWhitespaces: boolean = false): boolean {
-    return isInteger(this, ignoreWhitespaces);
+String.prototype.isInteger = function (ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
+    return isInteger(this, ignoreWhitespaces, isPositiveOnly);
 }
 
 /**

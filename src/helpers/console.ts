@@ -2,7 +2,7 @@
  * Prints an extra console log with a separator to help identify logs in the console.
  * @param {any} message "The data to be logged"
  * @param {string} title "An optional title in the log separator"
- * @param {boolean} logDate "Should the date be logged as well?"
+ * @param {boolean} logDate "If the date should be logged as well"
  */
 export function logEx(message?: any, title?: string, logDate: boolean = false): void {
     let nowStr: string = "";

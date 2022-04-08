@@ -22,6 +22,8 @@ describe("isInteger", () => {
     it("Checks if the string is an integer", () => {
         expect("123".isInteger()).toEqual(true);
         expect("-123".isInteger()).toEqual(true);
+        expect(" -123 ".isInteger(true, false)).toEqual(true);
+        expect(" -123 ".isInteger(true, true)).toEqual(false);
         expect("12.3".isInteger()).toEqual(false);
         expect("abcd".isInteger()).toEqual(false);
         expect("".isInteger()).toEqual(false);
