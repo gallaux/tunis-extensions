@@ -50,6 +50,7 @@ describe("toCapitalizedWord", () => {
 describe("toCamelCase", () => {
     it("Applies camel casing to the string", () => {
         expect("This is a test  ".toCamelCase()).toEqual("ThisIsATest");
+        expect(" please camel case".toCamelCase()).toEqual("PleaseCamelCase");
     });
 });
 
