@@ -27,7 +27,7 @@ export function isEndingWith(string: string, suffix: string, isCaseSensitive: bo
  * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-export function isInteger(string: string, ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
+export function isIntegerNumber(string: string, ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
     let regex: RegExp;
     if (ignoreWhitespaces && isPositiveOnly) {
         regex = /^\s*\d+\s*$/;

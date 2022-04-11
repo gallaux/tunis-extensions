@@ -18,15 +18,15 @@ describe("isEndingWith", () => {
     });
 });
 
-describe("isInteger", () => {
+describe("isIntegerNumber", () => {
     it("Checks if the string is an integer", () => {
-        expect("123".isInteger()).toEqual(true);
-        expect("-123".isInteger()).toEqual(true);
-        expect(" -123 ".isInteger(true, false)).toEqual(true);
-        expect(" -123 ".isInteger(true, true)).toEqual(false);
-        expect("12.3".isInteger()).toEqual(false);
-        expect("abcd".isInteger()).toEqual(false);
-        expect("".isInteger()).toEqual(false);
+        expect("123".isIntegerNumber()).toEqual(true);
+        expect("-123".isIntegerNumber()).toEqual(true);
+        expect(" -123 ".isIntegerNumber(true, false)).toEqual(true);
+        expect(" -123 ".isIntegerNumber(true, true)).toEqual(false);
+        expect("12.3".isIntegerNumber()).toEqual(false);
+        expect("abcd".isIntegerNumber()).toEqual(false);
+        expect("".isIntegerNumber()).toEqual(false);
     });
 });
 

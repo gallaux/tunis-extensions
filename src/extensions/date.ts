@@ -1,4 +1,4 @@
-import { isLeapYear } from "../helpers/date";
+import { isLeapYear } from "../helpers/date"
 
 declare global {
     interface Date {

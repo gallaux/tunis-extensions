@@ -1,4 +1,4 @@
-import { isEqualArrays, removeElement } from "../helpers/array";
+import { isEqualArrays, removeElement } from "../helpers/array"
 
 declare global {
     interface Array<T> {

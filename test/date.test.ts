@@ -1,5 +1,5 @@
 import "../src/index"
-import { isValidDate } from "../src/index";
+import { isValidDate } from "../src/index"
 
 describe("isLeapYear", () => {
     it("Determines if a date object is a leap year or not", () => {

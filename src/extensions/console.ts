@@ -1,4 +1,4 @@
-import { logEx } from "../helpers/console";
+import { logEx } from "../helpers/console"
 
 declare global {
     interface Console {
