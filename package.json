@@ -1,6 +1,6 @@
 {
     "name": "tunis-extensions",
-    "version": "0.0.72",
+    "version": "0.0.73",
     "license": "MIT",
     "private": false,
     "main": "dist/src/index.js",
