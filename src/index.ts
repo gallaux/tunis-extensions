@@ -15,8 +15,8 @@ export { logEx }
 import { isLeapYear, isValidDate } from "./helpers/date"
 export { isLeapYear, isValidDate }
 
-import { isInteger } from "./helpers/number"
-export { isInteger }
+import { isInteger, toStringWithZeroPadding } from "./helpers/number"
+export { isInteger, toStringWithZeroPadding }
 
 import { emptyPlaceholder, isEndingWith, isIntegerNumber, isStartingWith, toCamelCase, toCapitalizedWord, trimLeadingZeroes } from "./helpers/string"
 export { emptyPlaceholder, isEndingWith, isIntegerNumber, isStartingWith, toCamelCase, toCapitalizedWord, trimLeadingZeroes }
