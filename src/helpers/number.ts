@@ -4,7 +4,7 @@
  * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-export function isInteger(number: number, isPositiveOnly: boolean = false): boolean {
+export function isIntegerNumber(number: number, isPositiveOnly: boolean = false): boolean {
     if (isPositiveOnly && number < 0) {
         return false;
     }

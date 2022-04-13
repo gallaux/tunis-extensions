@@ -1,17 +1,17 @@
 import "../src/index"
 
-describe("isInteger", () => {
+describe("isIntegerNumber", () => {
     it("Checks if the number is an integer", () => {
         const zero = 0;
         const int = 123;
         const negInt = -123;
         const float = 12.3;
 
-        expect(zero.isInteger()).toEqual(true);
-        expect(int.isInteger()).toEqual(true);
-        expect(negInt.isInteger()).toEqual(true);
-        expect(negInt.isInteger(true)).toEqual(false);
-        expect(float.isInteger()).toEqual(false);
+        expect(zero.isIntegerNumber()).toEqual(true);
+        expect(int.isIntegerNumber()).toEqual(true);
+        expect(negInt.isIntegerNumber()).toEqual(true);
+        expect(negInt.isIntegerNumber(true)).toEqual(false);
+        expect(float.isIntegerNumber()).toEqual(false);
     });
 });
 

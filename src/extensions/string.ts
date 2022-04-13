@@ -1,10 +1,10 @@
-import { emptyPlaceholder, isEndingWith, isIntegerNumber, isStartingWith, toCamelCase, toCapitalizedWord, trimLeadingZeroes } from "../helpers/string"
+import { emptyPlaceholder, isEndingWith, isInteger, isStartingWith, toCamelCase, toCapitalizedWord, trimLeadingZeroes } from "../helpers/string"
 
 declare global {
     interface String {
         emptyPlaceholder(this: string, placeholder?: string): string;
         isEndingWith(this: string, suffix: string, isCaseSensitive?: boolean): boolean;
-        isIntegerNumber(this: string, ignoreWhitespaces?: boolean, isPositiveOnly?: boolean): boolean;
+        isInteger(this: string, ignoreWhitespaces?: boolean, isPositiveOnly?: boolean): boolean;
         isStartingWith(this: string, prefix: string, isCaseSensitive?: boolean): boolean;
         toCamelCase(this: string): string;
         toCapitalizedWord(this: string): string;
@@ -37,8 +37,8 @@ String.prototype.isEndingWith = function (suffix: string, isCaseSensitive: boole
  * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-String.prototype.isIntegerNumber = function (ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
-    return isIntegerNumber(this, ignoreWhitespaces, isPositiveOnly);
+String.prototype.isInteger = function (ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
+    return isInteger(this, ignoreWhitespaces, isPositiveOnly);
 }
 
 /**

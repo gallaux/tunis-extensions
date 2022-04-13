@@ -1,9 +1,9 @@
-import { isInteger, toStringWithZeroPadding } from "../helpers/number"
+import { isIntegerNumber, toStringWithZeroPadding } from "../helpers/number"
 import { isLeapYear } from "../helpers/date"
 
 declare global {
     interface Number {
-        isInteger(this: number, isPositiveOnly?: boolean): boolean;
+        isIntegerNumber(this: number, isPositiveOnly?: boolean): boolean;
         isLeapYear(this: number): boolean;
         toStringWithZeroPadding(this: number, places: number): string;
     }
@@ -14,8 +14,8 @@ declare global {
  * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-Number.prototype.isInteger = function (isPositiveOnly: boolean = false): boolean {
-    return isInteger(this, isPositiveOnly);
+Number.prototype.isIntegerNumber = function (isPositiveOnly: boolean = false): boolean {
+    return isIntegerNumber(this, isPositiveOnly);
 }
 
 /**

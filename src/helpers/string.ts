@@ -27,7 +27,7 @@ export function isEndingWith(string: string, suffix: string, isCaseSensitive: bo
  * @param {boolean} isPositiveOnly "If the integer can only be positive"
  * @returns {boolean}
  */
-export function isIntegerNumber(string: string, ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
+export function isInteger(string: string, ignoreWhitespaces: boolean = false, isPositiveOnly: boolean = false): boolean {
     let regex: RegExp;
     if (ignoreWhitespaces && isPositiveOnly) {
         regex = /^\s*\d+\s*$/;
@@ -51,6 +51,21 @@ export function isIntegerNumber(string: string, ignoreWhitespaces: boolean = fal
 export function isStartingWith(string: string, prefix: string, isCaseSensitive: boolean = true): boolean {
     let strPrefix = string.substr(0, prefix.length);
     return isCaseSensitive ? strPrefix === prefix : strPrefix.toLowerCase() === prefix.toLowerCase();
+}
+
+/**
+ * Converts an SVG string into an image source. Returns undefined if the conversion fails.
+ * See: https://dev.to/benjaminblack/using-a-string-of-svg-as-an-image-source-8mo
+ * @param {string} string "The SVG string being converted"
+ * @returns {string}
+ */
+export function svgStringToImageSource(string: string): string {
+    try {
+        const blob: Blob = new Blob([string], { type: 'image/svg+xml' });
+        return URL.createObjectURL(blob);
+    } catch (error) {
+        return undefined;
+    }
 }
 
 /**
